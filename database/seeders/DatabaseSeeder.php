@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
 
         User::factory()
             ->count(20)
-            ->has(Tweet::factory()->count(30))
             ->create();
 
         User::first()->update([
