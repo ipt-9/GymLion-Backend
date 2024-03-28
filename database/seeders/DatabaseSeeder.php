@@ -18,5 +18,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        User::factory()
+            ->count(20)
+            ->has(Tweet::factory()->count(30))
+            ->create();
+
+        User::first()->update([
+            'email' => 'user@example.com',
+            'password' => bcrypt('password')
+        ]);
     }
 }
