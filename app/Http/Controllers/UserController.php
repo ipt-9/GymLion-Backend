@@ -25,12 +25,13 @@ class UserController extends Controller
 
         // Create a new user instance
         $user = new User();
-        $user->firstname = $request->input('firstname');
-        $user->lastname = $request->input('lastname');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-        $user->updated_at = now();
-        $user->created_at = now();
+        // $user->firstname = $request->input('firstname');
+        // $user->lastname = $request->input('lastname');
+        // $user->email = $request->input('email');
+        // $user->password = bcrypt($request->input('password'));
+        // $user->updated_at = now();
+        // $user->created_at = now();
+        $user->fill($request->validated());
         $user->save();
         return response()->json(['message' => 'User created successfully'],201);
     }
