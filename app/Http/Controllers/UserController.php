@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -12,16 +13,15 @@ class UserController extends Controller
         $users = User::all();
         return response()->json($users);
     }
-    public function store(Request $request)
+    public function store(StoreUserRequest  $request)
     {
         // Validate the incoming request data
-        $request->validate([
+        /**  $request->validate([
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
-        ]);
-
+        ]);*/
 
         // Create a new user instance
         $user = new User();
