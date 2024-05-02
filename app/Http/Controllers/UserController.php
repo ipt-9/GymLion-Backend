@@ -13,6 +13,16 @@ class UserController extends Controller
         $users = User::all();
         return response()->json($users);
     }
+    public function show()
+    {
+        $users = User::all();
+        return response()->json($users);
+    }
+    public function purchases()
+    {
+        $users = User::all();
+        return response()->json($users);
+    }
     public function store(StoreUserRequest  $request)
     {
         // Validate the incoming request data
