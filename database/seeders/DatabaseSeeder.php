@@ -37,14 +37,6 @@ class DatabaseSeeder extends Seeder
             ->count(20)
             ->create();
 
-        Product::factory()
-            ->count(50)
-            ->create();
-
-        Purchase::factory()
-            ->count(10)
-            ->create();
-
         Category::create([
             'name' => 'Suplement',
         ]);
@@ -56,5 +48,13 @@ class DatabaseSeeder extends Seeder
         Category::create([
             'name' => 'Lioness',
         ]);
+
+        Product::factory()
+            ->count(50)
+            ->create();
+
+        Purchase::factory()
+            ->count(10)
+            ->create();
     }
 }

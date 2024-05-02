@@ -20,21 +20,12 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->word,
             'description' => $this->faker->sentence,
+            'category_id' => $this->faker->randomNumber(1, 3),
+            'brand_id' => $this->faker->randomNumber(1, 20),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'discounted_price' => 0,
             'is_discounted' => false,
             'is_sold_out' => false,
         ];
-    }
-    public function configure()
-    {
-        return $this->afterCreating(function (Product $product) {
-            // Assign a brand to the product
-            $brand = Brand::whereHas('category', function ($query) {
-                $query->inRandomOrder()->limit(1);
-            })->inRandomOrder()->first();
-
-            $product->brand()->associate($brand)->save();
-        });
     }
 }
