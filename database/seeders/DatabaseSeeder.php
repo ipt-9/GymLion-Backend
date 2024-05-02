@@ -3,10 +3,13 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 use App\Models\User;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Purchase;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -32,7 +35,6 @@ class DatabaseSeeder extends Seeder
 
         Brand::factory()
             ->count(20)
-            ->has(Tweet::factory()->count(30))
             ->create();
 
         Product::factory()
