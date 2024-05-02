@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('brand_id');
             $table->unsignedDecimal('price', 7, 2);
+            $table->unsignedDecimal('discounted_price', 7, 2);
             $table->boolean('is_discounted')->default(false);
             $table->boolean('is_sold_out')->default(false);
             $table->timestamps();

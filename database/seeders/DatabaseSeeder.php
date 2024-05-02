@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 use App\Models\User;
@@ -27,6 +28,18 @@ class DatabaseSeeder extends Seeder
         User::first()->update([
             'email' => 'user@example.com',
             'password' => bcrypt('password')
+        ]);
+
+        Category::create([
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        Category::create([
+            'name' => 'Jane Doe',
+            'email' => 'janedoe@example.com',
+            'password' => bcrypt('password'),
         ]);
     }
 }
