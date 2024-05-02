@@ -44,15 +44,15 @@ class DatabaseSeeder extends Seeder
             ->create();
 
         Category::create([
-            'name' => 'John Doe',
-            'email' => 'johndoe@example.com',
-            'password' => bcrypt('password'),
+            'name' => 'Suplement',
         ]);
 
         Category::create([
-            'name' => 'Jane Doe',
-            'email' => 'janedoe@example.com',
-            'password' => bcrypt('password'),
+            'name' => 'Lion',
+        ]);
+
+        Category::create([
+            'name' => 'Lioness',
         ]);
     }
 }
