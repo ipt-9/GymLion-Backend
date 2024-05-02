@@ -24,8 +24,8 @@ class StoreUserRequest extends FormRequest
         return [
             'firstname' => 'required|string',
             'lastname' => 'required|string',
-            'email' => 'required|string',
-            'password' => 'required|numeric',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
         ];
     }
 }
