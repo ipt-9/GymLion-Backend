@@ -30,6 +30,19 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
+        Brand::factory()
+            ->count(20)
+            ->has(Tweet::factory()->count(30))
+            ->create();
+
+        Product::factory()
+            ->count(50)
+            ->create();
+
+        Purchase::factory()
+            ->count(10)
+            ->create();
+
         Category::create([
             'name' => 'John Doe',
             'email' => 'johndoe@example.com',
