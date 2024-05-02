@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = User::all();
+        $products = Product::all();
         return response()->json($products);
     }
     public function byCategory()
     {
-        $products = User::all();
+        $products = Product::all();
         return response()->json($products);
     }
     public function byId()
     {
-        $products = User::all();
+        $products = Product::all();
         return response()->json($products);
     }
 
