@@ -18,7 +18,7 @@ class LoginController extends Controller
     {
         if (Auth::attempt($request->validated())) {
             return [
-                'token' => $request->user()->createToken('auth_token')->plainTextToken
+                'token' => $request->user()->createToken('auth_token')
             ];
         } else {
             return response()->json(['errors' => ['general' => 'E-Mail oder Passwort falsch.']], 422);
