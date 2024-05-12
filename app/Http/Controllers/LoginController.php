@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     /**
      *
-     * This code has been copied from the Twitter Project
+     * This code has partially been copied from the Twitter Project
      *
      */
     public function login(LoginRequest $request)
@@ -21,7 +21,7 @@ class LoginController extends Controller
                 'token' => $request->user()->createToken('auth_token')
             ];
         } else {
-            return response()->json(['errors' => ['general' => 'E-Mail oder Passwort falsch.']], 422);
+            return response()->json(['errors' => ['general' => 'Email of password is wrong']], 422);
         }
     }
     public function checkAuth(Request $request)
@@ -34,6 +34,6 @@ class LoginController extends Controller
     {
         $request->user()->tokens()->delete();
 
-        return response()->json(['message' => 'Logged out'], 200);
+        return response()->json(['message' => 'Logged out successfully'], 200);
     }
 }
