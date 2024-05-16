@@ -21,6 +21,7 @@ class Product extends Model
         'discounted_price',
         'is_discounted',
         'is_sold_out',
+        'images_url',
     ];
     public function category()
     {
