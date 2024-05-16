@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('/products')->group(function () {
     Route::get('', [ProductController::class, 'index']);
-    Route::get('/category/[category}', [ProductController::class, 'byCategory']);
+    Route::get('/category/{category}', [ProductController::class, 'byCategory']);
     Route::get('/{product}', [ProductController::class, 'byId']);
     Route::post('', [ProductController::class, 'store']);
 });
