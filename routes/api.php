@@ -25,7 +25,7 @@ Route::prefix('/products')->group(function () {
     Route::get('', [ProductController::class, 'index']);
     Route::get('/category/{category}', [ProductController::class, 'byCategory']);
     Route::get('/{product}', [ProductController::class, 'byId']);
-    Route::post('', [ProductController::class, 'store']);
+//    Route::post('', [ProductController::class, 'store']);
 });
 
 Route::prefix('/users')->group(function () {
@@ -38,5 +38,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/auth', [LoginController::class, 'checkAuth'])->middleware('auth:sanctum');
 
 Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::post('/signup', [LoginController::class, 'signup']);
 
 // Route::get('/me', [UserController::class, 'me'])->middleware('auth:sanctum');

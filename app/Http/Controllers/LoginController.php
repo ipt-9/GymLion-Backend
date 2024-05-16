@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\StoreUserRequest;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,5 +37,12 @@ class LoginController extends Controller
         $request->user()->tokens()->delete();
 
         return response()->json(['message' => 'Logged out successfully'], 200);
+    }
+    public function signup(StoreUserRequest $request)
+    {
+        $user = new User();
+        $user->fill($request->validated());
+        $user->save();
+        return response()->json(['message' => 'User created successfully'],201);
     }
 }
