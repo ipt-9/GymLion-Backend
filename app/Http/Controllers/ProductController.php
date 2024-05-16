@@ -12,10 +12,19 @@ class ProductController extends Controller
         $products = Product::all();
         return response()->json($products);
     }
-    public function byCategory()
+    public function byCategory(string $category)
     {
-        $products = Product::all();
-        return response()->json($products);
+        switch ($category){
+            case "supplements":
+                $id = 1;
+                break;
+            case "lion":
+                $id = 2;
+                break;
+            case "lioness":
+                $id = 3;
+        }
+        return Product::where('brand_id', "=", $id);
     }
     public function byId()
     {
