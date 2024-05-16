@@ -26,10 +26,9 @@ class ProductController extends Controller
         }
         return Product::where('category_id', $id)->get();
     }
-    public function byId()
+    public function byId(product $product)
     {
-        $products = Product::all();
-        return response()->json($products);
+        return Product::find($product);
     }
 
 }
