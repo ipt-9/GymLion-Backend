@@ -24,7 +24,7 @@ class ProductController extends Controller
             case "lioness":
                 $id = 3;
         }
-        return Product::where('brand_id', $id)->get();
+        return Product::where('category_id', $id)->get();
     }
     public function byId()
     {
