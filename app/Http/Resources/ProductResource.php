@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'discounted_price' => $this->discounted_price,
             'is_discounted' => $this->is_discounted,
             'is_sold_out' => $this->is_sold_out,
+            'images_url' => $this->images_url,
         ];
     }
 }
